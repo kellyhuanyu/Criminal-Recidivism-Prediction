@@ -40,6 +40,7 @@ compas <- compas %>%
   filter(race == "Caucasian" | race == "African-American")
 ```
 ### 2. Data exploration
+#### (1) Dummy variables
 Create a new dummy variable based on the COMPAS’ risk score (decile_score), which indicates if an individual was classified as low risk (score 1-4) or high risk (score 5-10).
 ```
 compas <- compas %>% 
@@ -48,7 +49,7 @@ compas <- compas %>%
                        1))
 ```
 
-#### Analyze the offenders across this new risk category:
+#### (2) Analyze the offenders across this new risk category:
 #### (a) What is the recidivism rate for low-risk and high-risk individuals?
 
 The recidivism rate for low-risk individuals is 32%. The recidivism rate for high-risk individuals is 63%.
@@ -93,7 +94,7 @@ caucasian
 ## 1       0.3908702
 ```
 
-#### Confusion Matrix
+#### (3) Confusion Matrix
 Now create a confusion matrix comparing COMPAS predictions for recidivism (is/is not low risk) and the actual two-year recidivism and interpret the results. To keep things consistent, I'll call recidivists “positive”.
 
 In the confusion matrix, TN = 1872, FN = 881, FP = 923, TP = 1602. The accuracy rate is 66%, which means the COMPAS correctly predicted 65% of all people in the dataset, no matter it’s true positives or true negatives. That also means that there are 34% of individuals in the dataset are classified wrong. The precision rate is 63%, which means the individuals who are predicted as positive, 63% of them are actually true positives, and the remaining 37% are false positives. There are 37% of the individuals who were classified as high risk while they did not actually recidivate in two years.
@@ -118,7 +119,7 @@ precision
 ## [1] 0.6344554
 ```
 
-#### Accuracy calculation
+#### (4) Accuracy calculation
 Now we calculate the confusion matrix separately for African-Americans and for Caucasians:
 #### (a) How accurate is the COMPAS classification for African-American individuals? For Caucasians?
 The accuracy rate for African-Americans is 65%, and for Caucasians is 67%.
