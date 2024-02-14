@@ -15,11 +15,13 @@ The dataset is based off ProPublica’s dataset (https://www.propublica.org/arti
 #### Variables
 ```
 c_charge_degree    Classifier for an individual’s crime–F for felony, M for misdemeanor
-race               Classifier for the recorded race of each individual in this dataset. We will only be looking at “Caucasian”, and “African-American” here
+race               Classifier for the recorded race of each individual in this dataset.
+                   We will only be looking at “Caucasian”, and “African-American” here
 age_cat            Classifies individuals as under 25, between 25 and 45, and older than 45
 sex                Classifier for the recorded sex of each individual in this dataset. Male or female.
 priors_count       Numeric, the number of previous crimes the individual has committed.
-decile_score       COMPAS classification of each individual’s risk of recidivism (1 = low . . . 10 = high). This is one of the crucial variables in the data, the number that the proprietary COMPAS algorithm assigns to all defendants.
+decile_score       COMPAS classification of each individual’s risk of recidivism (1 = low . . . 10 = high).
+                   This is one of the crucial variables in the data, the number that the proprietary COMPAS algorithm assigns to all defendants.
 two_year_recid     Binary variable, 1 if the individual recidivated within 2 years, 0 otherwise.
 ```
 
